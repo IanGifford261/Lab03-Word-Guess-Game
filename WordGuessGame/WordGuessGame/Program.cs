@@ -39,7 +39,7 @@ namespace WordGuessGame
             } while (runGameMenu);
         }
 
-        public static int PlayGame()
+        public static void PlayGame()
         {
             Console.WriteLine("Please guess any letter, Good Luck!");
 
@@ -48,35 +48,39 @@ namespace WordGuessGame
 
         public static void AdminMenu()
         {
-            Console.WriteLine("Choose to Add/View/Delete words for the game");
-            Console.WriteLine(" ");
-            Console.WriteLine("1. Add word(s)");
-            Console.WriteLine(" ");
-            Console.WriteLine("2. Delete word(s)");
-            Console.WriteLine(" ");
-            Console.WriteLine("3. View Current Word List");
-            Console.WriteLine(" ");
-            Console.WriteLine("4. Return to main menu");
-
-            string adminInput = Console.ReadLine();
-            int adminChoice = Convert.ToInt32(adminInput);
-            switch(adminChoice)
+            bool menuLoop = true;
+            do
             {
-                case 1:
-                    AddWords(" ");
-                    break;
+                Console.WriteLine("Choose to Add/View/Delete words for the game");
+                Console.WriteLine(" ");
+                Console.WriteLine("1. Add word(s)");
+                Console.WriteLine(" ");
+                Console.WriteLine("2. Delete word(s)");
+                Console.WriteLine(" ");
+                Console.WriteLine("3. View Current Word List");
+                Console.WriteLine(" ");
+                Console.WriteLine("4. Return to main menu");
 
-                case 2:
-                    DeleteWords();
-                    break;
+                string adminInput = Console.ReadLine();
+                int adminChoice = Convert.ToInt32(adminInput);
+                switch (adminChoice)
+                {
+                    case 1:
+                        AddWords(" ");
+                        break;
 
-                case 3:
-                    ViewWordList();
-                    break;
+                    case 2:
+                        DeleteWords();
+                        break;
 
-                case 4:
-                    break;
-            }
+                    case 3:
+                        ViewWordList();
+                        break;
+
+                    case 4:
+                        break;
+                }
+            } while (menuLoop);
 
         }
 
@@ -86,8 +90,9 @@ namespace WordGuessGame
             Environment.Exit(0);
         }
 
-        public static string AddLetter()
+        public static void AddLetter()
         {
+
 
         }
 
