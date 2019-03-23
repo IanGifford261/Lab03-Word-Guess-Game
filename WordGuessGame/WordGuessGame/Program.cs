@@ -124,6 +124,8 @@ namespace WordGuessGame
         {
             string filePath = "./gameWords.txt";
             string[] wordList = File.ReadAllLines(filePath);
+            Console.WriteLine(wordList);
+            return;
         }
 
         public static void DeleteWords()
