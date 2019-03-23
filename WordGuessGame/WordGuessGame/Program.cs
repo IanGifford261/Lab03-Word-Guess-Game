@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 
 namespace WordGuessGame
 {
@@ -9,6 +10,9 @@ namespace WordGuessGame
             bool runGameMenu = true;
             do
             {
+                Console.WriteLine(" ");
+                Console.WriteLine("---------------------------------------");
+                Console.WriteLine(" ");
                 Console.WriteLine("Welcome to the Word Guessing Game");
                 Console.WriteLine(" ");
                 Console.WriteLine("Please select a menu option 1-3. Your input must be numerical");
@@ -18,6 +22,9 @@ namespace WordGuessGame
                 Console.WriteLine("2. Admin Menu");
                 Console.WriteLine(" ");
                 Console.WriteLine("3. Exit Game");
+                Console.WriteLine(" ");
+                Console.WriteLine("---------------------------------------");
+                Console.WriteLine(" ");
 
                 string userInput = Console.ReadLine();
                 int userChoice = Convert.ToInt32(userInput);
@@ -52,6 +59,9 @@ namespace WordGuessGame
             bool menuLoop = true;
             do
             {
+                Console.WriteLine(" ");
+                Console.WriteLine("--------------------------------");
+                Console.WriteLine(" ");
                 Console.WriteLine("Choose to Add/View/Delete words for the game");
                 Console.WriteLine(" ");
                 Console.WriteLine("1. Add word(s)");
@@ -61,6 +71,9 @@ namespace WordGuessGame
                 Console.WriteLine("3. View Current Word List");
                 Console.WriteLine(" ");
                 Console.WriteLine("4. Return to main menu");
+                Console.WriteLine(" ");
+                Console.WriteLine("--------------------------------");
+                Console.WriteLine(" ");
 
                 string adminInput = Console.ReadLine();
                 int adminChoice = Convert.ToInt32(adminInput);
@@ -95,6 +108,7 @@ namespace WordGuessGame
 
         public static void AddLetter()
         {
+            string filePath = "./gameWords.txt";
 
 
         }
@@ -103,20 +117,20 @@ namespace WordGuessGame
         {
             string filePath = "./gameWords.txt";
             string[] wordsArray = new string[] { word };
-            System.IO.File.AppendAllLines(filePath, wordsArray);
+            File.AppendAllLines(filePath, wordsArray);
         }
 
         public static void ViewWordList()
         {
             string filePath = "./gameWords.txt";
-            
+            string[] wordList = File.ReadAllLines(filePath);
         }
 
         public static void DeleteWords()
         {
             string filePath = "./gameWords.txt";
 
-            System.IO.File.Delete(filePath);
+            File.Delete(filePath);
         }
 
 
