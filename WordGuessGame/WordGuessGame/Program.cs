@@ -36,6 +36,7 @@ namespace WordGuessGame
                         break;
 
                 }
+
             } while (runGameMenu);
         }
 
@@ -78,8 +79,10 @@ namespace WordGuessGame
                         break;
 
                     case 4:
+                        menuLoop = false;
                         break;
                 }
+
             } while (menuLoop);
 
         }
