@@ -46,7 +46,7 @@ namespace WordGuessGame
 
         }
 
-        public static int AdminMenu()
+        public static void AdminMenu()
         {
             Console.WriteLine("Choose to Add/View/Delete words for the game");
             Console.WriteLine(" ");
