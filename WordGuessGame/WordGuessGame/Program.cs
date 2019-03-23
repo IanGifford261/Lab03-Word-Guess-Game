@@ -6,13 +6,59 @@ namespace WordGuessGame
     {
         static void Main(string[] args)
         {
-            
+            Console.WriteLine("Welcome to the Word Guessing Game");
+            Console.WriteLine(" ");
+            Console.WriteLine("Please select a menu option 1-3. Your input must be numerical");
+            Console.WriteLine(" ");
+            Console.WriteLine("1. Play Game");
+            Console.WriteLine(" ");
+            Console.WriteLine("2. Admin Menu");
+            Console.WriteLine(" ");
+            Console.WriteLine("3. Exit Game");
+
+            string userInput = Console.ReadLine();
+            int userChoice = Convert.ToInt32(userInput);
+            switch(userChoice)
+            {
+                case 1:
+                    PlayGame();
+                    break;
+
+                case 2:
+                    AdminMenu();
+                    break;
+
+                case 3;
+                    GameExit();
+                    break;
+
+            }
+        }
+        public static int PlayGame()
+        {
+
+        }
+
+        public static int AdminMenu()
+        {
+
+        }
+
+        public static void GameExit()
+        {
+            Environment.Exit(0);
         }
         public static void AddWords(string word)
         {
-            string filePath = "./addWords.txt";
+            string filePath = "./gameWords.txt";
             string[] wordsArray = new string[] { word };
             System.IO.File.AppendAllLines(filePath, wordsArray);
+        }
+        public static void DeleteWords()
+        {
+            string filePath = "./gameWords.txt";
+
+            System.IO.File.Delete(filePath);
         }
     }
 }
