@@ -6,13 +6,20 @@ namespace WordGuessGame
     {
         static void Main(string[] args)
         {
+
             
         }
         public static void AddWords(string word)
         {
-            string filePath = "./addWords.txt";
+            string filePath = "./gameWords.txt";
             string[] wordsArray = new string[] { word };
             System.IO.File.AppendAllLines(filePath, wordsArray);
+        }
+        public static void DeleteWords()
+        {
+            string filePath = "./gameWords.txt";
+
+            System.IO.File.Delete(filePath);
         }
     }
 }
