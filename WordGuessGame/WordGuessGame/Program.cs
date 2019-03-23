@@ -28,24 +28,25 @@ namespace WordGuessGame
                     AdminMenu();
                     break;
 
-                case 3;
+                case 3:
                     GameExit();
                     break;
 
             }
         }
-        public static int PlayGame()
-        {
+        //public static int PlayGame()
+        //{
+        //    Console.WriteLine("");
+        //}
 
-        }
+        //public static int AdminMenu()
+        //{
 
-        public static int AdminMenu()
-        {
-
-        }
+        //}
 
         public static void GameExit()
         {
+            Console.WriteLine("Thank you for playing!");
             Environment.Exit(0);
         }
         public static void AddWords(string word)
