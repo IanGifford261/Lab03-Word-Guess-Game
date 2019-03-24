@@ -147,7 +147,37 @@ namespace WordGuessGame
         public static void DeleteWords()
         {
             string filePath = "./gameWords.txt";
-            File.Delete();
+            using (StreamReader sr = File.OpenText(filePath))
+            {
+                string line;
+                while ((line = sr.ReadLine()) != null)
+                {
+                    Console.WriteLine(line);
+                }
+            }
+
+            while (true)
+            {
+                Console.WriteLine("Once done type finish");
+                Console.WriteLine("Please Pick the word you would like to remove");
+                string userDelete = Console.ReadLine();
+                if(userDelete == "finish")
+                {
+                    break;
+                }
+                else
+                {
+                    string[] loadedWords = File.ReadAllLines(filePath);
+                    string[] outputWords = new string[loadedWords.Length - 1];
+
+                    int j;
+                    for (int i = 0; i < length; i++)
+                    {
+                        
+
+                    }
+                }
+            }
 
         }
 
