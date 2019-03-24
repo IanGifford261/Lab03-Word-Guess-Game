@@ -49,6 +49,7 @@ namespace WordGuessGame
 
         public static void PlayGame()
         {
+            RandomWord();
             Console.WriteLine(" Please guess any letter, Good Luck!");
 
 
@@ -101,20 +102,22 @@ namespace WordGuessGame
 
         }
 
+        public static void GameExit()
+        {
+            Console.WriteLine("Thank you for playing!");
+            Console.ReadLine();
+            Environment.Exit(0);
+            
+        }
 
-        //public static void RandomWord()
-        //{
-        //    string[] words = File.ReadAllLines();
-        //    Random word = new Random();
-        //    string randomWord = rand.Next();
-        //}
-
-        //public static void AddLetter()
-        //{
-        //    string filePath = "./gameWords.txt";
-
-
-        //}
+        public static string RandomWord()
+        {
+            string filePath = "../../../gameWords.txt";
+            string[] words = File.ReadAllLines(filePath);
+            Random randWord = new Random();
+            int randomNumber = randWord.Next(0, words.Length);
+            return words[randomNumber];
+        }
 
         public static void AddWords(string word)
         {
@@ -187,13 +190,6 @@ namespace WordGuessGame
                     sw.WriteLine(outputWords[i]);
                 }
             }
-        }
-        public static void GameExit()
-        {
-            Console.WriteLine("Thank you for playing!");
-            Console.ReadLine();
-            Environment.Exit(0);
-            
         }
     }
 }
