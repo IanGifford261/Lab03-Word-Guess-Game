@@ -114,12 +114,12 @@ namespace WordGuessGame
         //    string randomWord = rand.Next();
         //}
 
-        public static void AddLetter()
-        {
-            string filePath = "./gameWords.txt";
+        //public static void AddLetter()
+        //{
+        //    string filePath = "./gameWords.txt";
 
 
-        }
+        //}
 
         public static void AddWords(string word)
         {
@@ -130,15 +130,25 @@ namespace WordGuessGame
 
         public static void ViewWordList()
         {
-            string linesRead = 
-            File.ReadAllLines();
+            string filePath = "./gameWords.txt";
+            using (StreamReader sr = File.OpenText(filePath))
+            {
+                string line;
+                while((line = sr.ReadLine()) != null)
+                {
+                    Console.WriteLine(line);
+                }
+            }
+
+            
 
         }
 
         public static void DeleteWords()
         {
             string filePath = "./gameWords.txt";
-            File.Delete(filePath);
+            File.Delete();
+
         }
 
 
