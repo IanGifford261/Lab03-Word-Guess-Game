@@ -130,7 +130,9 @@ namespace WordGuessGame
 
         public static void ViewWordList()
         {
-            File.ReadAllLines(Console.WriteLine());
+            string linesRead = 
+            File.ReadAllLines();
+
         }
 
         public static void DeleteWords()
