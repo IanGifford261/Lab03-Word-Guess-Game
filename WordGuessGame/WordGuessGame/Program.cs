@@ -13,15 +13,15 @@ namespace WordGuessGame
                 Console.WriteLine(" ");
                 Console.WriteLine("---------------------------------------");
                 Console.WriteLine(" ");
-                Console.WriteLine("Welcome to the Word Guessing Game");
+                Console.WriteLine(" Welcome to the Word Guessing Game");
                 Console.WriteLine(" ");
-                Console.WriteLine("Please select a menu option 1-3. Your input must be numerical");
+                Console.WriteLine(" Please select a menu option 1-3. Your input must be numerical");
                 Console.WriteLine(" ");
-                Console.WriteLine("1. Play Game");
+                Console.WriteLine(" 1. Play Game");
                 Console.WriteLine(" ");
-                Console.WriteLine("2. Admin Menu");
+                Console.WriteLine(" 2. Admin Menu");
                 Console.WriteLine(" ");
-                Console.WriteLine("3. Exit Game");
+                Console.WriteLine(" 3. Exit Game");
                 Console.WriteLine(" ");
                 Console.WriteLine("---------------------------------------");
                 Console.WriteLine(" ");
@@ -49,7 +49,7 @@ namespace WordGuessGame
 
         public static void PlayGame()
         {
-            Console.WriteLine("Please guess any letter, Good Luck!");
+            Console.WriteLine(" Please guess any letter, Good Luck!");
 
 
         }
@@ -64,13 +64,13 @@ namespace WordGuessGame
                 Console.WriteLine(" ");
                 Console.WriteLine("Choose to Add/View/Delete words for the game");
                 Console.WriteLine(" ");
-                Console.WriteLine("1. Add word(s)");
+                Console.WriteLine(" 1. Add word(s)");
                 Console.WriteLine(" ");
-                Console.WriteLine("2. Delete word(s)");
+                Console.WriteLine(" 2. Delete word(s)");
                 Console.WriteLine(" ");
-                Console.WriteLine("3. View Current Word List");
+                Console.WriteLine(" 3. View Current Word List");
                 Console.WriteLine(" ");
-                Console.WriteLine("4. Return to main menu");
+                Console.WriteLine(" 4. Return to main menu");
                 Console.WriteLine(" ");
                 Console.WriteLine("--------------------------------");
                 Console.WriteLine(" ");
@@ -101,11 +101,6 @@ namespace WordGuessGame
 
         }
 
-        public static void GameExit()
-        {
-            Console.WriteLine("Thank you for playing!");
-            Environment.Exit(0);
-        }
 
         //public static void RandomWord()
         //{
@@ -123,30 +118,14 @@ namespace WordGuessGame
 
         public static void AddWords(string word)
         {
-            string filePath = "./gameWords.txt";
+            string filePath = "../../../gameWords.txt";
             string[] wordsArray = new string[] { word };
             File.AppendAllLines(filePath, wordsArray);
         }
 
         public static void ViewWordList()
         {
-            string filePath = "./gameWords.txt";
-            using (StreamReader sr = File.OpenText(filePath))
-            {
-                string line;
-                while((line = sr.ReadLine()) != null)
-                {
-                    Console.WriteLine(line);
-                }
-            }
-
-            
-
-        }
-
-        public static void DeleteWords()
-        {
-            string filePath = "./gameWords.txt";
+            string filePath = "../../../gameWords.txt";
             using (StreamReader sr = File.OpenText(filePath))
             {
                 string line;
@@ -155,32 +134,67 @@ namespace WordGuessGame
                     Console.WriteLine(line);
                 }
             }
+        }
+
+        public static void DeleteWords()
+        {
+            //Jason Burns helped teach me how everything within this method works, as well as assisted me with how to write it properly.
+            string filePath = "../../../gameWords.txt";
+            using (StreamReader sr = File.OpenText(filePath))
+            {
+                string line;
+                while ((line = sr.ReadLine()) != null)
+                {
+                    Console.WriteLine(line);
+                }
+            }
+            string[] loadedWords = File.ReadAllLines(filePath);
+            string[] outputWords = new string[loadedWords.Length - 1];
 
             while (true)
             {
-                Console.WriteLine("Once done type finish");
-                Console.WriteLine("Please Pick the word you would like to remove");
+                Console.WriteLine(" ");
+                Console.WriteLine(" ");
+                Console.WriteLine(" Once done type finish");
+                Console.WriteLine(" ");
+                Console.WriteLine(" ");
+                Console.WriteLine(" Please Pick the word you would like to remove");
                 string userDelete = Console.ReadLine();
-                if(userDelete == "finish")
+
+                if (userDelete == "finish")
                 {
                     break;
                 }
                 else
                 {
-                    string[] loadedWords = File.ReadAllLines(filePath);
-                    string[] outputWords = new string[loadedWords.Length - 1];
-
-                    int j;
-                    for (int i = 0; i < length; i++)
+                    int j = 0;
+                    for (int i = 0; i < loadedWords.Length; i++)
                     {
-                        
-
+                        if (loadedWords[i] != userDelete)
+                        {
+                            outputWords[j] = loadedWords[i];
+                            j++;
+                        }
                     }
                 }
             }
+            File.Delete(filePath);
 
+            using (StreamWriter sw = File.CreateText(filePath))
+            {                
+                for (int i = 0; i < outputWords.Length; i++)
+                {
+                    sw.WriteLine(outputWords[i]);
+                }
+            }
         }
-
-
+        public static void GameExit()
+        {
+            Console.WriteLine("Thank you for playing!");
+            Console.ReadLine();
+            Environment.Exit(0);
+            
+        }
     }
 }
+
