@@ -55,7 +55,7 @@ namespace WordGuessGame
             string guessedLetter = Console.ReadLine();
             while (guessedLetter == hiddenWord)
             {
-                return gameRunning;
+
             }
             Console.WriteLine(" Please guess any letter, Good Luck!");
 
