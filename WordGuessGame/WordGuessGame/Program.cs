@@ -80,7 +80,8 @@ namespace WordGuessGame
                 switch (adminChoice)
                 {
                     case 1:
-                        AddWords(" ");
+                        string userInput = Console.ReadLine();
+                        AddWords(userInput);
                         break;
 
                     case 2:
@@ -106,10 +107,12 @@ namespace WordGuessGame
             Environment.Exit(0);
         }
 
-        public static void RandomWord()
-        {
-
-        }
+        //public static void RandomWord()
+        //{
+        //    string[] words = File.ReadAllLines();
+        //    Random word = new Random();
+        //    string randomWord = rand.Next();
+        //}
 
         public static void AddLetter()
         {
@@ -127,16 +130,12 @@ namespace WordGuessGame
 
         public static void ViewWordList()
         {
-            string filePath = "./gameWords.txt";
-            string[] wordList = File.ReadAllLines(filePath);
-            Console.WriteLine(wordList);
-            return;
+            File.ReadAllLines(Console.WriteLine());
         }
 
         public static void DeleteWords()
         {
             string filePath = "./gameWords.txt";
-
             File.Delete(filePath);
         }
 
