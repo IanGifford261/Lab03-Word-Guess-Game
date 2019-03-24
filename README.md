@@ -6,8 +6,7 @@
 
 ## Description
 
-This is a C# console application that will prompt a user with the normal ATM menu that you would find at an ATM. There are multiple choices that you can pick such as "View Balance, Withdraw, Deposit, and exit."
-A user can select each option while "withdrawing"/"depositing" currency and having it update.
+This is a C# console application that will prompt a user 
 
 ------------------------------
 
