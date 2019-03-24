@@ -49,10 +49,17 @@ namespace WordGuessGame
 
         public static void PlayGame()
         {
+            Console.WriteLine(" ");
             RandomWord();
+            Console.WriteLine(" ");
+            Console.WriteLine(" ");
+            Console.WriteLine(" Your word is ");
+            Console.WriteLine(" ");
+            Console.WriteLine(" ");
             Console.WriteLine(" Please guess any letter, Good Luck!");
-
-
+            Console.WriteLine("_ _ _ _ _ _ _ _ _ _ ");
+            Console.WriteLine(" ");
+            Console.WriteLine(" ");
         }
 
         public static void AdminMenu()
