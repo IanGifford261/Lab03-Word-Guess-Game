@@ -6,7 +6,7 @@
 
 ## Description
 
-This is a C# console application that will prompt a user 
+This is a C# console application that will prompt a user to guess the letters of a word within a word base in a text file. When a user makes a correct choice, the blank spot is replaced with the letter that they guessed. Once a word has been completed, the User wins the game and the console application will let them play another with a random word picked or they can enter an "admin menu" where they can edit the word list, and view it. 
 
 ------------------------------
 
