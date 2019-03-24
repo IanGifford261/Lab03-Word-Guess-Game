@@ -50,26 +50,25 @@ namespace WordGuessGame
         public static void PlayGame()
         {
             bool gameRunning = true;
-            do
-            {
-                Console.WriteLine(" ");
-                RandomWord();
-                Console.WriteLine(" ");
-                Console.WriteLine(" ");
-                
-                Console.WriteLine(" ");
-                Console.WriteLine(" ");
-                Console.WriteLine(" Please guess any letter, Good Luck!");
-                Console.WriteLine(" ");
-                Console.WriteLine(" ");
-                Console.WriteLine(" _ _ _ _ _ _ _ _ _ _ ");
-                Console.WriteLine(" ");
-                Console.WriteLine(" ");
+            string hiddenWord = RandomWord();
 
-                string userInput = Console.ReadLine();
+            string guessedLetter = Console.ReadLine();
+            while (guessedLetter == hiddenWord)
+            {
 
             }
-            while (gameRunning);
+            Console.WriteLine(" Please guess any letter, Good Luck!");
+
+            //Console.WriteLine(" ");
+            //RandomWord();
+            //Console.WriteLine(" ");
+            //Console.WriteLine(" ");               
+            //Console.WriteLine(" ");
+            //Console.WriteLine(" ");
+            //Console.WriteLine(" Please guess any letter, Good Luck!");
+            //Console.WriteLine(" ");
+            //Console.WriteLine(" ");
+            //Console.WriteLine(" ");
         }
 
         public static void AdminMenu()
@@ -125,13 +124,6 @@ namespace WordGuessGame
             Console.ReadLine();
             Environment.Exit(0);
             
-        }
-
-        public static string GuessWords(string[])
-        {
-
-
-
         }
 
         public static string RandomWord()
