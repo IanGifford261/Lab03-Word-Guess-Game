@@ -106,6 +106,11 @@ namespace WordGuessGame
             Environment.Exit(0);
         }
 
+        public static void RandomWord()
+        {
+
+        }
+
         public static void AddLetter()
         {
             string filePath = "./gameWords.txt";
