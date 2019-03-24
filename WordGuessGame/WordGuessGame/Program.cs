@@ -53,10 +53,10 @@ namespace WordGuessGame
             do
             {
                 Console.WriteLine(" ");
-                string randomWord = RandomWord();
+                RandomWord();
                 Console.WriteLine(" ");
                 Console.WriteLine(" ");
-                Console.WriteLine($" Your word is {randomWord}");
+                
                 Console.WriteLine(" ");
                 Console.WriteLine(" ");
                 Console.WriteLine(" Please guess any letter, Good Luck!");
@@ -67,8 +67,6 @@ namespace WordGuessGame
                 Console.WriteLine(" ");
 
                 string userInput = Console.ReadLine();
-
-
 
             }
             while (gameRunning);
@@ -127,6 +125,13 @@ namespace WordGuessGame
             Console.ReadLine();
             Environment.Exit(0);
             
+        }
+
+        public static string GuessWords(string[])
+        {
+
+
+
         }
 
         public static string RandomWord()
