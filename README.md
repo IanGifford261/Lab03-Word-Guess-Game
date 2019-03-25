@@ -46,7 +46,7 @@ Enjoy.
 ------------------------------
 
 ## Change Log
-1.0: *Initial build complete, awaiting review* - 24 MAR 2019
+1.0: *Initial build not complete, awaiting review* - 24 MAR 2019
 
 
 
